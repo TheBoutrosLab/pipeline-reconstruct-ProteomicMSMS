@@ -25,7 +25,7 @@ This Nextflow DSL2 pipeline reconstructs pseudo-MS/MS spectra from Bruker dia-PA
 3. Run the pipeline:
 
    ```bash
-   export NXF_VER=24.10.6
+   export NXF_VER=25.10.5
    export NXF_SYNTAX_PARSER=v1
    nextflow run . -c my-run.config
    ```
