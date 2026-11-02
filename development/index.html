@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
       <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>reconstruct-ProteomicMSMS</title>
+    <title>pipeline-reconstruct-ProteomicMSMS</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -31,7 +31,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> reconstruct-ProteomicMSMS
+          <a href="." class="icon icon-home"> pipeline-reconstruct-ProteomicMSMS
         </a>
       </div>
 
@@ -51,10 +51,6 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="flow-diagram/">Flow Diagram</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="pipeline-steps/">Pipeline Steps</a>
                 </li>
               </ul>
@@ -67,19 +63,15 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="resources/">Resources</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="testing-and-validation/">Testing and Validation</a>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="references/">References</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="discussions/">Discussions</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="contributors/">Contributors</a>
                 </li>
               </ul>
               <ul>
@@ -93,7 +85,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href=".">reconstruct-ProteomicMSMS</a>
+          <a href=".">pipeline-reconstruct-ProteomicMSMS</a>
         
       </nav>
       <div class="wy-nav-content">
@@ -102,7 +94,7 @@
     <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">Home</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/TheBoutrosLab/reconstruct-ProteomicMSMS/blob/2c333afe461d6f2c5b8639e9c6e2b41ca5ae083b/README.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/3aada5b59958dd1d2e6fe3245f192c47870be758/README.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -110,30 +102,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="pipeline-name">Pipeline Name</h1>
-<p><a href="https://github.com/theboutroslab/template-NextflowPipeline/actions/workflows/prepare-release.yaml"><img alt="Prepare release" src="https://img.shields.io/badge/Action-Create%20New%20Release-blue" /></a></p>
+                <h1 id="pipeline-reconstruct-proteomicmsms">pipeline-reconstruct-ProteomicMSMS</h1>
 <ul>
-<li><a href="./#pipeline-name">Pipeline Name</a></li>
 <li><a href="overview/#overview">Overview</a></li>
 <li><a href="how-to-run/#how-to-run">How To Run</a></li>
-<li><a href="flow-diagram/#flow-diagram">Flow Diagram</a></li>
-<li><a href="pipeline-steps/#pipeline-steps">Pipeline Steps</a><ul>
-<li><a href="pipeline-steps/#1-stepprocess-1">1. Step/Process 1</a></li>
-<li><a href="pipeline-steps/#2-stepprocess-2">2. Step/Process 2</a></li>
-<li><a href="pipeline-steps/#3-stepprocess-n">3. Step/Process n</a></li>
-</ul>
-</li>
+<li><a href="pipeline-steps/#pipeline-steps">Pipeline Steps</a></li>
 <li><a href="inputs/#inputs">Inputs</a></li>
+<li><a href="inputs/#input-csv">Input CSV</a></li>
+<li><a href="inputs/#config">Config</a></li>
 <li><a href="outputs/#outputs">Outputs</a></li>
-<li><a href="testing-and-validation/#testing-and-validation">Testing and Validation</a><ul>
-<li><a href="testing-and-validation/#test-data-set">Test Data Set</a></li>
-<li><a href="#validation-version-number">Validation \<version number></a></li>
-<li><a href="testing-and-validation/#validation-tool">Validation Tool</a></li>
-</ul>
-</li>
+<li><a href="resources/#resources">Resources</a></li>
+<li><a href="testing-and-validation/#testing-and-validation">Testing and Validation</a></li>
 <li><a href="references/#references">References</a></li>
-<li><a href="discussions/#discussions">Discussions</a></li>
-<li><a href="contributors/#contributors">Contributors</a></li>
 <li><a href="license/#license">License</a></li>
 </ul>
               
@@ -163,7 +143,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/TheBoutrosLab/reconstruct-ProteomicMSMS" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     
@@ -188,5 +168,5 @@
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2026-11-02 18:30:30.272152+00:00
+Build Date UTC : 2026-11-02 23:28:38.571843+00:00
 -->

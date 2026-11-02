@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Pipeline Steps - reconstruct-ProteomicMSMS</title>
+    <title>Pipeline Steps - pipeline-reconstruct-ProteomicMSMS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -31,7 +31,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> reconstruct-ProteomicMSMS
+          <a href=".." class="icon icon-home"> pipeline-reconstruct-ProteomicMSMS
         </a>
       </div>
 
@@ -48,19 +48,9 @@
                 <li class="toctree-l1"><a class="reference internal" href="../how-to-run/">How To Run</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../flow-diagram/">Flow Diagram</a>
-                </li>
-              </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Pipeline Steps</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-stepprocess-1">1. Step/Process 1</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-stepprocess-2">2. Step/Process 2</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-stepprocess-n">3. Step/Process n</a>
-    </li>
     </ul>
                 </li>
               </ul>
@@ -73,19 +63,15 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../resources/">Resources</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../testing-and-validation/">Testing and Validation</a>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../references/">References</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../discussions/">Discussions</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../contributors/">Contributors</a>
                 </li>
               </ul>
               <ul>
@@ -99,7 +85,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">reconstruct-ProteomicMSMS</a>
+          <a href="..">pipeline-reconstruct-ProteomicMSMS</a>
         
       </nav>
       <div class="wy-nav-content">
@@ -108,7 +94,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">Pipeline Steps</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/TheBoutrosLab/reconstruct-ProteomicMSMS/blob/2c333afe461d6f2c5b8639e9c6e2b41ca5ae083b/README.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/3aada5b59958dd1d2e6fe3245f192c47870be758/README.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -117,24 +103,20 @@
             <div class="section" itemprop="articleBody">
               
                 <h2 id="pipeline-steps">Pipeline Steps</h2>
-<h3 id="1-stepprocess-1">1. Step/Process 1</h3>
-<blockquote>
-<p>A 2-3 sentence description of each step/proccess in your pipeline that includes the purpose of the step/process, the tool(s) being used and their version, and the expected scientific inputs/outputs (e.g: FASTQs and BAMs) of the pipeline.</p>
-</blockquote>
-<h3 id="2-stepprocess-2">2. Step/Process 2</h3>
-<blockquote>
-<p>A 2-3 sentence description of each step/proccess in your pipeline that includes the purpose of the step/process, the tool(s) being used and their version, and the expected scientific inputs/outputs (e.g: FASTQs and BAMs) of the pipeline.</p>
-</blockquote>
-<h3 id="3-stepprocess-n">3. Step/Process n</h3>
-<blockquote>
-<p>A 2-3 sentence description of each step/proccess in your pipeline that includes the purpose of the step/process, the tool(s) being used and their version, and the expected scientific inputs/outputs (e.g: FASTQs and BAMs) of the pipeline.</p>
-</blockquote>
-<hr />
+<pre><code class="language-mermaid">flowchart LR
+  CSV[Input CSV] --&gt; RECON[diaTracer: one .d per task]
+  D[Bruker .d] --&gt; RECON
+  JAR[diaTracer JAR] --&gt; RECON
+  LIB[MSFragger ext/bruker] --&gt; RECON
+  RECON --&gt; MZML[Pseudo-MS/MS mzML]
+  MZML --&gt; HASH[SHA-512 checksum]
+</code></pre>
+<p><code>reconstruct_msms_diaTracer</code> copies each <code>.d</code> directory to its task directory, stages the supplied JAR and Bruker libraries, and writes a standardized <code>&lt;sample_name&gt;_&lt;fraction_id&gt;_diatracer.mzML</code>. It requires exactly one generated mzML. <code>calculate_SHA512</code> writes its checksum sidecar. Separate CSV rows can run in parallel within the allocated resources.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../flow-diagram/" class="btn btn-neutral float-left" title="Flow Diagram"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../how-to-run/" class="btn btn-neutral float-left" title="How To Run"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../inputs/" class="btn btn-neutral float-right" title="Inputs">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -158,11 +140,11 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/TheBoutrosLab/reconstruct-ProteomicMSMS" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     
-      <span><a href="../flow-diagram/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../how-to-run/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../inputs/" style="color: #fcfcfc">Next &raquo;</a></span>

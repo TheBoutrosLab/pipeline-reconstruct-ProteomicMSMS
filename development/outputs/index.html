@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Outputs - reconstruct-ProteomicMSMS</title>
+    <title>Outputs - pipeline-reconstruct-ProteomicMSMS</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -31,7 +31,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> reconstruct-ProteomicMSMS
+          <a href=".." class="icon icon-home"> pipeline-reconstruct-ProteomicMSMS
         </a>
       </div>
 
@@ -49,10 +49,6 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../flow-diagram/">Flow Diagram</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../pipeline-steps/">Pipeline Steps</a>
                 </li>
               </ul>
@@ -67,19 +63,15 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../resources/">Resources</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../testing-and-validation/">Testing and Validation</a>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../references/">References</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../discussions/">Discussions</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../contributors/">Contributors</a>
                 </li>
               </ul>
               <ul>
@@ -93,7 +85,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">reconstruct-ProteomicMSMS</a>
+          <a href="..">pipeline-reconstruct-ProteomicMSMS</a>
         
       </nav>
       <div class="wy-nav-content">
@@ -102,7 +94,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">Outputs</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/TheBoutrosLab/reconstruct-ProteomicMSMS/blob/2c333afe461d6f2c5b8639e9c6e2b41ca5ae083b/README.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/3aada5b59958dd1d2e6fe3245f192c47870be758/README.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -111,8 +103,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h2 id="outputs">Outputs</h2>
-<!-- List and describe the final output(s) of the pipeline. -->
-
+<p>Results are written under <code>&lt;output_dir&gt;/reconstruct-ProteomicMSMS-1.0.0/&lt;dataset_id&gt;/</code>:</p>
 <table>
 <thead>
 <tr>
@@ -122,26 +113,26 @@
 </thead>
 <tbody>
 <tr>
-<td>ouput 1</td>
-<td>1 - 2 sentence description of the output.</td>
+<td><code>output/diaTracer/&lt;sample_name&gt;_&lt;fraction_id&gt;_diatracer.mzML</code></td>
+<td>Reconstructed pseudo-MS/MS spectra.</td>
 </tr>
 <tr>
-<td>ouput 2</td>
-<td>1 - 2 sentence description of the output.</td>
+<td><code>output/diaTracer/&lt;mzML name&gt;.sha512</code></td>
+<td>SHA-512 checksum, compatible with <code>sha512sum -c</code>.</td>
 </tr>
 <tr>
-<td>ouput n</td>
-<td>1 - 2 sentence description of the output.</td>
+<td><code>log-reconstruct-ProteomicMSMS-1.0.0-&lt;timestamp&gt;/</code></td>
+<td>Process logs, Nextflow trace, report, timeline, and effective parameters.</td>
 </tr>
 </tbody>
 </table>
-<hr />
+<p>The mzML can be searched as DDA spectra and used in spectral-library generation. Keep the original <code>.d</code> acquisition for DIA-NN quantification.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../inputs/" class="btn btn-neutral float-left" title="Inputs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../testing-and-validation/" class="btn btn-neutral float-right" title="Testing and Validation">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../resources/" class="btn btn-neutral float-right" title="Resources">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -164,14 +155,14 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/TheBoutrosLab/reconstruct-ProteomicMSMS" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     
       <span><a href="../inputs/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../testing-and-validation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../resources/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
