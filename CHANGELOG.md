@@ -6,6 +6,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Update the recommended Nextflow version to 25.10.5 for the shared config v2.0.0.
+
 ## [1.0.0] - 2026-11-02
 
 ### Added
