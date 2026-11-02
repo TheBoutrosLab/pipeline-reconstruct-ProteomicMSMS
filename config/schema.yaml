@@ -3,72 +3,73 @@ dataset_id:
   type: 'String'
   required: true
   help: 'Dataset identifier'
-patient_id:
-  type: 'String'
+input_csv:
+  type: 'Path'
+  mode: 'r'
   required: true
-  help: 'Patient identifier'
-sample_id:
-  type: 'String'
+  help: 'CSV with sample_name,fraction_id,path columns and one Bruker .d directory per row'
+diatracer_executable:
+  type: 'Path'
+  mode: 'r'
   required: true
-  help: 'Sample identifier'
-param_name:
-  type: 'String'
-  required: false
-  default: 'foo-bar'
-  help: 'Example pipeline parameter; replace with pipeline-specific parameters'
+  help: 'Path to a separately obtained diaTracer JAR'
+bruker_lib_dir:
+  type: 'Path'
+  mode: 'r'
+  required: true
+  help: 'Path to the MSFragger ext/bruker directory with libtimsdata-2-21-0-4.so'
 output_dir:
   type: 'Path'
   mode: 'w'
   required: true
   help: 'Absolute path to output directory'
-apptainer_library:
-  type: 'Path'
-  mode: 'r'
-  required: false
-  help: 'Absolute path to Apptainer library directory'
-apptainer_cache:
+work_dir:
   type: 'Path'
   mode: 'w'
   required: false
-  help: 'Absolute path to Apptainer cache directory'
-singularity_library:
-  type: 'Path'
-  mode: 'r'
+  help: 'Nextflow working directory with enough space to copy each .d input'
+fragpipe_docker_repo:
+  type: 'String'
   required: false
-  help: 'Absolute path to Singularity library directory'
-singularity_cache:
-  type: 'Path'
-  mode: 'w'
+  help: 'FragPipe Docker repository without a version tag'
+fragpipe_version:
+  type: 'String'
   required: false
-  help: 'Absolute path to Singularity cache directory'
+  help: 'FragPipe Docker image version tag'
+docker_image_fragpipe:
+  type: 'String'
+  required: false
+  help: 'FragPipe container image containing Java and Bruker libraries'
+diatracer_write_inter:
+  type: 'Number'
+  choices: [0, 1]
+  required: false
+diatracer_delta_apex_im:
+  type: 'Number'
+  required: false
+diatracer_delta_apex_rt:
+  type: 'Number'
+  required: false
+diatracer_ms1_ms2_corr:
+  type: 'Number'
+  required: false
+diatracer_mass_defect_filter:
+  type: 'Number'
+  choices: [0, 1]
+  required: false
+diatracer_mass_defect_offset:
+  type: 'Number'
+  required: false
+diatracer_rf_max:
+  type: 'Number'
+  required: false
 base_resource_update:
   type: 'ResourceUpdateNamespace'
   required: false
-  help: 'User-defined modifications for adjusting base resource allocations for processes'
   elements:
     memory:
       type: 'ResourceUpdateList'
       required: false
-      help: 'List of memory updates'
     cpus:
       type: 'ResourceUpdateList'
       required: false
-      help: 'List of CPU updates'
-input:
-  type: 'InputNamespace'
-  required: true
-  help: 'Input samples'
-  elements:
-    BAM:
-      type: 'InputBAMNamespace'
-      required: true
-      help: 'Input BAM samples grouped by sample type'
-      elements:
-        normal:
-          type: 'BAMEntryList'
-          required: false
-          help: 'Input normal sample'
-        tumor:
-          type: 'BAMEntryList'
-          required: false
-          help: 'Input tumor sample'
