@@ -94,7 +94,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">How To Run</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/162429015687b93fbff04eb4084f5bf8b8384781/README.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/2e01201bc3e9a7202597be10de85ddde3988170f/README.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -105,10 +105,10 @@
                 <h2 id="how-to-run">How To Run</h2>
 <ol>
 <li>
-<p>Initialize the repository's Git submodules with <code>git submodule update --init --recursive</code>. Copy <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/162429015687b93fbff04eb4084f5bf8b8384781/config/template.config">config/template.config</a> to a run-specific config. Set <code>dataset_id</code>, <code>input_csv</code>, <code>diatracer_executable</code>, <code>bruker_lib_dir</code>, and <code>output_dir</code>.</p>
+<p>Initialize the repository's Git submodules with <code>git submodule update --init --recursive</code>. Copy <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/2e01201bc3e9a7202597be10de85ddde3988170f/config/template.config">config/template.config</a> to a run-specific config. Set <code>dataset_id</code>, <code>input_csv</code>, <code>diatracer_executable</code>, <code>bruker_lib_dir</code>, and <code>output_dir</code>.</p>
 </li>
 <li>
-<p>Obtain the diaTracer JAR and the compatible MSFragger <code>ext/bruker</code> directory under their licenses. diaTracer 2.2.1 requires <code>libtimsdata-2-21-0-4.so</code> in that directory. Create an input CSV using <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/162429015687b93fbff04eb4084f5bf8b8384781/input/input.csv">input/input.csv</a>, with one <code>.d</code> acquisition per row.</p>
+<p>Obtain the diaTracer JAR and the compatible MSFragger <code>ext/bruker</code> directory under their licenses. diaTracer 2.2.1 requires <code>libtimsdata-2-21-0-4.so</code> in that directory. Create an input CSV using <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/2e01201bc3e9a7202597be10de85ddde3988170f/input/input.csv">input/input.csv</a>, with one <code>.d</code> acquisition per row.</p>
 </li>
 <li>
 <p>Run the pipeline:</p>
@@ -118,7 +118,7 @@
    export NXF_VER=25.10.5
    export NXF_SYNTAX_PARSER=v1
    nextflow run . -c my-run.config</code></p>
-<p>The <code>standard</code> and <code>docker</code> profiles use Docker; use <code>-profile apptainer</code> where appropriate. The default image is assembled from <code>fragpipe_docker_repo = 'fcyucn/fragpipe'</code> and <code>fragpipe_version = '24.0'</code>. Set <code>work_dir</code> to scratch with enough space for copies of the <code>.d</code> acquisitions. The <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/162429015687b93fbff04eb4084f5bf8b8384781/.env-template"><code>.env-template</code></a> records the Nextflow version and parser used by the shared pipeline configuration.</p>
+<p>The <code>standard</code> and <code>docker</code> profiles use Docker; use <code>-profile apptainer</code> where appropriate. The default image is assembled from <code>fragpipe_docker_repo = 'fcyucn/fragpipe'</code> and <code>fragpipe_version = '24.0'</code>. Set <code>work_dir</code> to scratch with enough space for copies of the <code>.d</code> acquisitions. The <a href="https://github.com/TheBoutrosLab/pipeline-reconstruct-ProteomicMSMS/blob/2e01201bc3e9a7202597be10de85ddde3988170f/.env-template"><code>.env-template</code></a> records the Nextflow version and parser used by the shared pipeline configuration.</p>
               
             </div>
           </div><footer>
